@@ -36,6 +36,9 @@ class Tile:
         else:
             print("Неверный ввод")
             self.buyTile(self, Player)
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.id}, {self.cost}, {self.sell}, {self.fee}, {self.Monopoly.id}, {self.owner})"
     @property
     def payment(self):
         return self.fee * self.level * (2 if self.Monopoly.active else 1)
